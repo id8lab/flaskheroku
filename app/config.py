@@ -24,5 +24,4 @@ class Config(object):
 
         app.logger.setLevel(logging.INFO)
         app.logger.info('Heroku test')
-
-    return app
+        return app

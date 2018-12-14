@@ -16,4 +16,13 @@ test local
 $ export FLASK_APP=main.py
 $ flask run
 
+Flask environment set as .flaskenv
+
+Procfile contain the launch of the python application.
+
+## MongoDB access
+To access MongoDB I have created a mongodb on mlab.com
+
+
+
 

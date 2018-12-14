@@ -1,6 +1,9 @@
 from flask import render_template, flash, redirect
 from app import app
 from app.forms import LoginForm
+from urllib.parse import quote_plus
+from pymongo import MongoClient
+
 
 @app.route('/')
 @app.route('/index')
@@ -16,6 +19,17 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
+
+
+    post_data = {
+    'user': 'Michael Hansen',
+    'email': 'michaelhansen@vizneo.com',
+    'password': '123'
+     }
+    client = MongoClient('mongodb://herokutest:Takeal00k@ds139675.mlab.com:39675/michael-mongo')
+    collection = client['michael-mongo'].herokudb
+    collection.insert_one({"title": "Test"})
+    client.close(); 
     return render_template('index.html', title='Home', user=user, posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])

@@ -11,7 +11,6 @@ app_settings = os.getenv(
 )
 app.config.from_object(app_settings)
 
-
 from app import routes
 
 

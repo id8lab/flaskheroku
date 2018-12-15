@@ -30,6 +30,21 @@ also, create a db user and use that user in your URI
 mongodb://<dbuser>:<dbpassword>@ds139675.mlab.com:39675/dbname
 
 the setup.sh file holds the environment variables the application will use.
+use source setupenv.sh to set envirnment variables
 
 You can hardcode these variables in the config.py file
+
+to generate the SECRET_KEY you can use gpg:
+
+$ gpg --gen-random --armor 1 14
+
+or
+
+$ openssl rand -base64 14
+
+it will generate something like this:
+
+IFRj4uTWB2cdAd3FYhk=
+
+
 
